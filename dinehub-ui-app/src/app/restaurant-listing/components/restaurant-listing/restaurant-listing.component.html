@@ -1,0 +1,18 @@
+<div class="restaurant-grid">
+    <div class="restaurant-card" *ngFor="let restaurant of restaurantList">
+        <div class="card">
+            <div class="bg-image hover-overlay" mdbRipple rippleColor="light">
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
+                <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{restaurant.name}}</h5>
+                <p class="card-text">{{restaurant.description}}</p>
+                <p class="card-text">{{restaurant.address}}</p>
+                <button class="btn btn-primary" (click)="onButtonClick(restaurant.restaurantId)">Order Now</button>
+            </div>
+        </div>
+    </div>
+</div>

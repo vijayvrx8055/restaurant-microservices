@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/foodCatalogue")
+@CrossOrigin
 public class FoodCatalogueController {
 
     @Autowired

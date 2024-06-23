@@ -11,13 +11,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/restaurants")
+@CrossOrigin
 public class RestaurantController {
 
     @Autowired
     private RestaurantService restaurantService;
 
     @GetMapping
-    public ResponseEntity<List<RestaurantDto>> findAllHotels() {
+    public ResponseEntity<List<RestaurantDto>> getAllRestaurants() {
         List<RestaurantDto> restaurants = restaurantService.findAllHotels();
         return new ResponseEntity<>(restaurants, HttpStatus.OK);
     }
