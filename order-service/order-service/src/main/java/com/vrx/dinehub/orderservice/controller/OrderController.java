@@ -17,7 +17,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping
-    public ResponseEntity<OrderDto> saveOrder(@RequestBody OrderDtoFromFE orderDtoFromFE){
+    public ResponseEntity<OrderDto> saveOrder(@RequestBody OrderDtoFromFE orderDtoFromFE) {
         OrderDto orderDto = orderService.saveOrder(orderDtoFromFE);
         return new ResponseEntity<>(orderDto, HttpStatus.CREATED);
     }

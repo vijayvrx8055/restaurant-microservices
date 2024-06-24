@@ -30,14 +30,16 @@ export class FoodCatalogueComponent {
       params => {
         this.restaurantId = params.get('restaurantId') || 'defaultRestaurantId';
       }
-    )
+    );
     this.getFoodItemsByRestaurant(this.restaurantId);
+
   }
 
   getFoodItemsByRestaurant(restaurantId: string) {
     this.foodItemService.fetchRestaurantAndFoodItemById(restaurantId).subscribe(
       data => {
         this.foodItemResponse = data;
+        this.foodItemResponse.foodItemsList.map(i => { i.quantity = 0 })
       }
     )
   }
@@ -49,23 +51,24 @@ export class FoodCatalogueComponent {
       restaurant: this.restaurant
     }
     this.orderSummary.foodItemsList = this.foodItemCart;
+    console.log('this.orderSummary.foodItemsList', this.orderSummary.foodItemsList);
     this.orderSummary.restaurant = this.foodItemResponse.restaurant;
     this.router.navigate(['/order-summary'],
       { queryParams: { data: JSON.stringify(this.orderSummary) } })
   }
 
   increment(food: FoodItem) {
-    //updating quantity
-    food.quantity++;
-    //finding if same food is already present
+    food.quantity++;//updating quantity
     const index = this.foodItemCart.findIndex(item => {
-      item.itemId === food.itemId
+      return item.itemId === food.itemId;
     });
 
     if (index === -1) {
-      this.foodItemCart.push(food);//push if food not present
+      this.foodItemCart.push(food); // Push if food not present
+      console.log('Food item added:', this.foodItemCart);
     } else {
-      this.foodItemCart[index] = food;// update the food if present
+      this.foodItemCart[index] = food; // Update the food if present
+      console.log('Food item updated:', this.foodItemCart);
     }
   }
   decrement(food: FoodItem) {
