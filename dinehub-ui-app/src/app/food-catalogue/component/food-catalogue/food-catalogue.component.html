@@ -1,0 +1,33 @@
+<div class="card mb-3 bg-card">
+    <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="card-img-top" alt="Wild Landscape" />
+    <div class="card-body">
+        <div class="restaurant-header">
+            <h5 class="card-title">{{foodItemResponse.restaurant.name}}</h5>
+            <button type="button" class="btn btn-success" mdbRipple (click)="onCheckout()">Checkout</button>
+        </div>
+
+        <p class="card-text">
+            {{foodItemResponse.restaurant.description}}
+        </p>
+        <div class="food-menu">
+            <div class="food-iem" *ngFor="let food of foodItemResponse.foodItemsList">
+                <div class="card fi">
+                    <div class="card-body fi-card">
+                        <div class="food-details">
+                            <div class="food-name">{{food.itemName}}</div>
+                            <div class="food-price">{{food.price}}</div>
+                        </div>
+                        <div class="food-quantity">
+                            <button type="button" class="btn btn-danger minus-button" mdbRipple
+                                *ngIf="food.quantity > 0" (click)="decrement(food)">-</button>
+                            <button type="button" class="btn btn-success plus-button" mdbRipple
+                                (click)="increment(food)">+</button>
+                            <button type="button" class="btn btn-dark" mdbRipple>{{food.quantity}}</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

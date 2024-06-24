@@ -1,14 +1,4 @@
 .card {
-    height: 300px;
-    width: 250px;
-    font-size: 10px;
-    justify-content: space-around;
-    display: flex;
-    margin: 10px;
-}
-
-.restaurant-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 1fr));
-    grid-gap: 10px;
+    margin: 20px;
+    height: 100%;
 }

@@ -1,0 +1,33 @@
+.bg-card {
+    margin: 100px;
+    margin-top: 20px;
+}
+
+.restaurant-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.minus-button,
+.plus-button {
+    margin-right: 10px;
+}
+
+.food-details,
+.fi-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.food-name {
+    margin-right: 30px;
+}
+
+.fi {
+    margin: 10px;
+}

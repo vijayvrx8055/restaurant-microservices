@@ -26,8 +26,8 @@ export class RestaurantListingComponent {
     )
   }
 
-  onButtonClick($event: any) {
-
+  onButtonClick(restaurantId: string) {
+    this.router.navigate(['/food-catalogue', restaurantId])
   }
 
 }

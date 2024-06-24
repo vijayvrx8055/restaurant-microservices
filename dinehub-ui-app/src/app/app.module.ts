@@ -19,6 +19,8 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FoodCatalogueModule } from './food-catalogue/food-catalogue.module';
+import { OrderModule } from './order/order.module';
 import { RestaurantListingModule } from './restaurant-listing/restaurant-listing.module';
 import { HeaderModule } from './shared/header/header.module';
 
@@ -46,7 +48,9 @@ import { HeaderModule } from './shared/header/header.module';
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
-    RestaurantListingModule
+    RestaurantListingModule,
+    FoodCatalogueModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
